@@ -1,0 +1,18 @@
+<div class="reservation-wrapper">
+  <ng-container *ngIf="{
+    reservationsData: (reservationsData$ | async) }">
+      <div class="card-item" *ngFor="let reservation of reservationsData">
+        <mat-card class="vehicle-card">
+          <mat-card-header>
+            <mat-card-title>Your upcoming reservation</mat-card-title>
+            <mat-card-subtitle>Enjoy your trip!</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+              <p><b>Start Date  - {{reservation.startDate}}</b></p><br/>
+              <p><b>End Date  - {{reservation.endDate}}</b></p><br/>
+              <p><b>Price  - {{reservation.price}}</b></p><br/>
+          </mat-card-content>
+        </mat-card>
+      </div>
+  </ng-container>
+</div>

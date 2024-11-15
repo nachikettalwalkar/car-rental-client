@@ -1,0 +1,24 @@
+<ng-container *ngIf="{
+    locationData: (locationData$ | async), 
+    vehicleTypeData: (vehicleTypeData$ | async) }">
+    <div class="zr-body">
+        <div class="comp-container">
+        <app-filters
+            [locationData]="locationData"
+            [vehicleTypeData]="vehicleTypeData"
+            (onSelectedLocation)="getVehicleTypesFromSelectedLocation($event)"
+            (onApply)="onFilterApply($event)">
+        </app-filters>
+        </div>
+    </div>
+    </ng-container>
+    <ng-container *ngIf="{
+    vehicleData: (vehicleData$ | async)
+    }">
+    <div class="card-deck-container">
+        <div class="card-item" *ngFor="let vehicle of vehicleData">
+            <app-vehicle-card [vehicle]="vehicle" (onBook)="onClickReservation($event)"></app-vehicle-card>
+        </div>
+    </div>
+</ng-container>
+  

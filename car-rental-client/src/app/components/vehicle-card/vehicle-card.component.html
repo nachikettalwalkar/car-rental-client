@@ -1,0 +1,13 @@
+<mat-card class="vehicle-card">
+    <mat-card-header>
+      <mat-card-title>{{vehicle.name}}</mat-card-title>
+      <mat-card-subtitle>{{vehicle.description}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src={{vehicle.image}}>
+    <mat-card-content>
+        <p><b>Only ${{vehicle.price}} for your entire trip!</b></p> 
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-flat-button (click)="onBookClick(vehicle)" type="submit">BOOK</button>
+    </mat-card-actions>
+  </mat-card>
